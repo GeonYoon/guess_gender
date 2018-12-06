@@ -3,6 +3,22 @@
 About this application
 
 ## How To install
+
+Clone the repository first
+```
+git clone https://github.com/GeonYoon/django-rest.git
+```
+
+### Frontend Configuration
+
+```
+cd frontend
+npm install 
+npm start 
+```
+
+### Backend Configuration
+
 Make sure you have following software installed in your system. 
 * Python3
 * pip3
@@ -12,47 +28,18 @@ for this project. This can keep you out from affecting other projects by install
 ```
 pip3 install virtualenv 
 ```
-
 Create virtual environment on the same dir where this project root folder is located at. 
 Activate the environment
-
 ```
-virtualenv [name]
+virtualenv -p python3 [envname]
 source [name]/bin/activate 
 ```
-Create project folder and clone the repository inside of it.
-```
-mkdir [project-name]
-cd [project-name]
-git clone https://github.com/GeonYoon/django-rest.git
-```
-
 Install all the dependencies for the project.
-
 ```
-cd [project folder]
-pip3 install -r requirements.txt
-```
-
-I used PostgreSQL for my database. Therefore, you need to install and run it. 
-```
-sudo apt-get install postgresql postgresql-contrib
-sudo service postgresql start
+cd backend
+pip install -r requirements.txt
 ```
 
-Customize DATABASES section in setting.py
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '[YOUR_DB_NAME]',
-        'USER' : 'postgres',
-        'PASSWORD' : '[YOUR_PASSWORD]',
-        'HOST':'localhost',
-        'PORT':'5432'
-    }
-}
-```
 Create your own super user for /admin
 ```
 python manage.py makemigrations
@@ -63,53 +50,6 @@ python manage.py createsuperuser [name]
 Run server with following line
 ```
 python3 manage.py runserver
-```
-
-You can run local tests by following line
-```
-python3 manage.py test 
-```
-        
-## API endpoints
-```
-List of available API (browseable) at /api
-* /admin/                   ---> admin page
-
-* /api/auth/                ---> Login 
-* /api/auth/register/       ---> Register
-* /api/auth/jwt/            ---> Obtain JWT 
-* /api/auth/jwt/refresh     ---> refresh JWT
-
-* /api/user/<username>      ---> User Detail View
-* /api/user/<status>        ---> User Status API View
-
-* /api/status/              ---> Status API View
-* /api/status/<id>/         ---> Status API Detail View
-```
-
-## Django Cheatsheet
-```
-Creating a new project :
-django-admin startproject projectname
-
-Add an app to a project : 
-python3 manage.py startapp appname
-
-Starting the server : 
-// In case of c9, you need to add $IP:$PORT at the end of the command
-python3 manage.py runserver $IP:$PORT
-
-Creating migrations:
-python3 manage.py makemigrations
-
-Migrate the database : 
-python3 manage.py migrate
-
-Creating a Super User for the admin panel : 
-python3 manage.py createsuperuserRun 
-
-Collecting static files into one folder : 
-python3 manage.py collectstatic
 ```
 
 
