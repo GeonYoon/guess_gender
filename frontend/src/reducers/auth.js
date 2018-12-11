@@ -18,7 +18,7 @@ const loginInitialState = {
 
 export default handleActions({
     [LOGIN_SUCCESS] : (state, action) => {
-      // console.log(action.payload)
+       console.log(action.payload)
       return { ...state,
                token: action.payload.token,
                user: action.payload.user,

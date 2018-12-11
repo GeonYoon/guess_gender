@@ -13,7 +13,7 @@ class UserAPITestCase(APITestCase): #Unittest
         # user.set_password('django1234')
         # user.save()
         
-    def test_register_user_api_fail(self):
+    def test_machine_learning(self):
         url = api_reverse('api-form:form')
         data = {
             'about1' : 'C, Java and Android Programmer with a very small knowledge in web development. Amateur Hacker. Engineering student for now. Huge fan of Batman.',
