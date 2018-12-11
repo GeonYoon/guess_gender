@@ -5,16 +5,24 @@ import { withRouter } from 'react-router-dom';
 
 class outputContainer extends Component {
   render(){
-    const {form} = this.props;
+    const {nbcm_gender,mnbcm_gender,lcm_gender,most_common_gender,username} = this.props;
     return <Output
-              form = {form}
+              nbcm_gender = {nbcm_gender}
+              mnbcm_gender = {mnbcm_gender}
+              lcm_gender = {lcm_gender}
+              most_common_gender = {most_common_gender}
+              username = {username}
            />;
   }
 }
 
-const mapStateToProps = ({form}) => {
+const mapStateToProps = ({form,auth}) => {
   return {
-    form : form.whichGender
+    nbcm_gender : form.nbcm_gender,
+    mnbcm_gender : form.mnbcm_gender,
+    lcm_gender : form.lcm_gender,
+    most_common_gender : form.most_common_gender,
+    username : auth.user
   }
 };
 

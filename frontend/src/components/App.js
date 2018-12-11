@@ -8,8 +8,8 @@ import loginContainer from '../containers/loginContainer';
 import registerContainer from '../containers/registerContainer';
 import formContainer from '../containers/formContainer';
 import outputContainer from '../containers/outputContainer';
+import landingContainer from '../containers/landingContainer'
 
-import Landing from './Landing'
 import PrivateRoute from '../containers/PrivateRoute';
 
 
@@ -25,7 +25,7 @@ class App extends Component {
                 <div>
                   <HeaderContainer />
                   <Switch>
-                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/" component={landingContainer} />
                     <Route exact path="/login" component={loginContainer} />
                     <Route exact path="/register" component={registerContainer} />
                     <PrivateRoute exact path="/form" component={formContainer} />

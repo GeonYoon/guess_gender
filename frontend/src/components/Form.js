@@ -32,7 +32,7 @@ class Form extends Component {
                 />
                 <Input
                   type='textarea'
-                  label="Describe about Yourself"
+                  label="Describe about Yourself. The more you write, the better we can guess!"
                   s={12}
                   name="about2"
                   onChange={this.handleChange}
