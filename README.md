@@ -1,5 +1,5 @@
 # Guess  Gender
-![image](img/pic1.png)
+![image](img/pic1.png)![image](img/pic2.png)![image](img/pic3.png)![image](img/pic4.png)![image](img/pic5.png)![image](img/pic6.png)
 
 
 This is a web application using React.js and Django. 
