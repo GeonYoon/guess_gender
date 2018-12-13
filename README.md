@@ -1,4 +1,6 @@
 # Guess  Gender
+![image](img/pic1.png)
+
 
 This is a web application using React.js and Django. 
 It has an authentication system that allows you to sign in & log in. 
@@ -60,7 +62,10 @@ python3 manage.py runserver
 
 * [Django](https://www.djangoproject.com) - Python Web framework
 * [Django REST framework](https://www.django-rest-framework.org) - To handle API requests
+* [React](https://reactjs.org/) - Used to build client side
+* [Redux](http://redux.js.org/docs/basics/UsageWithReact.html) - Predictable state container for JavaScript apps
+* [Pickle](https://docs.python.org/3/library/pickle.html) - The pickle module implements binary protocols for serializing and de-serializing a Python object structure.
+* [Joblib](https://pypi.org/project/joblib/) - Joblib is a set of tools to provide lightweight pipelining in Python
 
 ## Authors
-
 * **Geon Yoon ** - *Initial work* - [GeonYoon](https://github.com/GeonYoon)
