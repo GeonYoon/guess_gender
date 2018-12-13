@@ -1,9 +1,10 @@
 # Guess  Gender
-<p float="left">
-  ![image](img/pic1.png)![image](img/pic2.png)![image](img/pic3.png)![image](img/pic4.png)![image](img/pic5.png)![image](img/pic6.png)
-</p>
 
-
+<img src="img/pic1.png" width="18%"></img> 
+<img src="img/pic2.png" width="18%"></img> 
+<img src="img/pic3.png" width="18%"></img> 
+<img src="img/pic4.png" width="18%"></img> 
+<img src="img/pic5.png width="18%"></img>
 
 This is a web application using React.js and Django. 
 It has an authentication system that allows you to sign in & log in. 
