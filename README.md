@@ -1,11 +1,5 @@
 # Guess  Gender
-
-<img src="img/pic1.png" width="18%"></img> 
-<img src="img/pic2.png" width="18%"></img> 
-<img src="img/pic3.png" width="18%"></img> 
-<img src="img/pic4.png" width="18%"></img> 
-<img src="img/pic5.png width="18%"></img>
-
+![image](img/pic4.png)
 This is a web application using React.js and Django. 
 It has an authentication system that allows you to sign in & log in. 
 Using private routers restricts unauthenticated users to go to the private pages. Based on the text given by users, this app guesses their genders. Three different classifications( Naive Bayes Classifier, Multinomial Naive Bayes classifier, Logistic regression classifier) are used to study Twitter profile information and the most common guess is used for the final guess. 
