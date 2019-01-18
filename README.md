@@ -1,19 +1,17 @@
 # Guess  Gender
-![image](img/pic4.png)
+![](guess_gif.gif)
 This is a web application using React.js and Django. 
 It has an authentication system that allows you to sign in & log in. 
 Using private routers restricts unauthenticated users to go to the private pages. Based on the text given by users, this app guesses their genders. Three different classifications( Naive Bayes Classifier, Multinomial Naive Bayes classifier, Logistic regression classifier) are used to study Twitter profile information and the most common guess is used for the final guess. 
 
 
 ## How To install
-
 Clone the repository first
 ```
-git clone https://github.com/GeonYoon/django-rest.git
+https://github.com/GeonYoon/guessGender.git
 ```
 
 ### Frontend Configuration
-
 ```
 cd frontend
 npm install 
@@ -21,7 +19,6 @@ npm start
 ```
 
 ### Backend Configuration
-
 Make sure you have following software installed in your system. 
 * Python3
 * pip3
@@ -42,19 +39,19 @@ Install all the dependencies for the project.
 cd backend
 pip install -r requirements.txt
 ```
-
-Create your own super user for /admin
+Migrate all the changes
 ```
 python manage.py makemigrations
 python manage.py migrate
-python manage.py createsuperuser 
 ```
-
+Create your own super user. 
+```
+python manage.py createsuperuser
+```
 Run server with following line
 ```
 python3 manage.py runserver
 ```
-
 
 ## Built With
 
