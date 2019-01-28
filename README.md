@@ -1,9 +1,15 @@
 # Guess  Gender
+
+Based on the text given by users, this app guesses their genders. Three different classifications are used to study Twitter's profile information. The studied model will predict the gender using the given inputs
+
 ![](guess_gif.gif)
 
-This is a web application using React.js and Django. 
-It has an authentication system that allows you to sign in & log in. 
-Using private routers restricts unauthenticated users to go to the private pages. Based on the text given by users, this app guesses their genders. Three different classifications( Naive Bayes Classifier, Multinomial Naive Bayes classifier, Logistic regression classifier) are used to study Twitter profile information and the most common guess is used for the final guess. 
+## Notable features
+- Machine learning model guesses users' gender 
+- Naive Bayes Classifier, Multinomial Naive Bayes classifier, Logistic regression classifier are used to train the model 
+- Support full authentication system 
+- Private router restricts unauthenticated users to go to the private pages
+- React and Django are used
 
 
 ## How To install
