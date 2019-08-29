@@ -11,7 +11,6 @@ Based on the text given by users, this app guesses their genders. Three differen
 - Private router restricts unauthenticated users to go to the private pages
 - React and Django are used
 
-
 ## How To install
 Clone the repository first
 ```
