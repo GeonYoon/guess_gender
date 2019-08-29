@@ -51,7 +51,7 @@ Migrate all the changes
 python manage.py makemigrations
 python manage.py migrate
 ```
-Create your own super user. 
+Create your own super user.
 ```
 python manage.py createsuperuser
 ```
