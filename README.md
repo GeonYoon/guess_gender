@@ -1,4 +1,4 @@
-# Guess  Gender
+# Guess  Gender No registration version
 
 Based on the text given by users, this app guesses their genders. Three different classifications are used to study Twitter's profile information. The studied model will predict the gender using the given inputs
 
