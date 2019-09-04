@@ -25,7 +25,8 @@ SECRET_KEY = 'e=5%^^i^4@+@m6d7w65qt$$06&ect0m%l47#$%gl#ek=em68_&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = '*'
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -86,9 +87,13 @@ TEMPLATES = [
 #     ),
 # }
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:3000',
+#     'localhost:3050',
+#     '172.19.0.4',
+#     '127.0.0.1',
+#     '127.0.0.3'
+# )
 
 WSGI_APPLICATION = 'guessGender.wsgi.application'
 

@@ -18,6 +18,7 @@ User = get_user_model()
 
 class UserPublicSerializer(serializers.ModelSerializer):
     uri = serializers.SerializerMethodField(read_only=True)
+    print("longin reach")
     class Meta:
         model = User
         fields = [
@@ -31,6 +32,7 @@ class UserPublicSerializer(serializers.ModelSerializer):
         return api_reverse("api-user:detail", kwargs={"username": obj.username},request=request)
 
 class UserRegisterSerializer(serializers.ModelSerializer):
+    print("reach here")
     # password        = serializers.CharField(style={'input_type' : 'password'}, write_only=True)
     password2       = serializers.CharField(style={'input_type' : 'password'}, write_only=True)
     token           = serializers.SerializerMethodField(read_only=True)

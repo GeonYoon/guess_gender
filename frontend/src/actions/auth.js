@@ -10,7 +10,7 @@ import {
 
 export const login = (username, password,history) => async dispatch => {
   try{
-    const res = await axios.post('http://127.0.0.1:8000/api/auth/',{username, password})
+    const res = await axios.post('/api/auth/',{username, password})
     dispatch({type: LOGIN_SUCCESS, payload: res.data})
     history.push('/form');
   }
@@ -26,7 +26,7 @@ export const logout = () => async dispatch => {
 export const register = (username,password,password2,email,history) => async dispatch =>{
   try{
     const compact ={username,password,password2,email}
-    const res = await axios.post('http://127.0.0.1:8000/api/auth/register/',compact)
+    const res = await axios.post('/api/auth/register/',compact)
     dispatch({type: REGISTER_SUCCESS, payload: res.data})
     history.push('/form');
   }
