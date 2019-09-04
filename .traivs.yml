@@ -10,7 +10,8 @@ services:
 #   # npm test is not automatically terminated. So we add a command -- --coverage to kill  
 #   - docker run ssy01013/react-test npm test -- --coverage
 
-after_success:
+# after_success:
+script:
   - docker build -t ssy01013/guess-frontend ./frontend 
   - docker build -t ssy01013/guess-nginx ./nginx
   - docker build -t ssy01013/guess-backend ./backend
