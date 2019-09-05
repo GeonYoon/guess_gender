@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      component: backend
+  template:
+    metadata: 
+      labels: 
+        component: backend
+    spec:
+      containers: 
+        - name: backend
+          image: ssy01013/guess-backend
+          ports:  
+          - containerPort: 8000 
+          # !TODO This is for the future purpose
+          # env: 
+          #   - name: REDIS_HOST
+          #     value: redis-cluster-ip-service
+          #   - name: REDIS_PORT
+          #     value: '6379'
+          #   - name: PGUSER
+          #     value: postgres
+          #   - name: PGHOST
+          #     value: client-cluster-ip-service
+          #   - name: PGPORT
+          #     value: '5432'
+          #   - name: PGDATABASE
+          #     value: postgres
+          #   - name: PGPASSWORD # is not related to kubernetes secret
+          #     valueFrom: 
+          #       secretKeyRef: 
+          #         name: pgpassword
+          #         key: PGPASSWORD 
+              
+
+      

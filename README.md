@@ -59,6 +59,13 @@ Run server with following line
 python3 manage.py runserver
 ```
 
+## nginx mandatory command
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+
+minikube addons enable ingress
+```
+
 ## Built With
 
 * [Django](https://www.djangoproject.com) - Python Web framework
