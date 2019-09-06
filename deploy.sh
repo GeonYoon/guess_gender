@@ -1,5 +1,5 @@
 docker build -t ssy01013/guess-frontend:latest -t ssy01013/guess-frontend:$SHA -f ./frontend/Dockerfile ./frontend
-docker build -t ssy01013/guess-backend:latest -t ssy01013/guess-backend:$SHA -f ./backend/Dockerfile ./server
+docker build -t ssy01013/guess-backend:latest -t ssy01013/guess-backend:$SHA -f ./backend/Dockerfile ./backend
 
 docker push ssy01013/guess-frontend:latest
 docker push ssy01013/guess-backend:latest
