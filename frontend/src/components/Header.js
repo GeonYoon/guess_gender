@@ -14,7 +14,8 @@ class Header extends Component {
             case false:
                  return [
                    <li key='1'><Link to={'/login'}>Login</Link></li>,
-                   <li key='2'><Link to={'/register'}>Register</Link></li>
+                   <li key='2'><Link to={'/register'}>Register</Link></li>,
+                   <li key='3'><a href="https://github.com/GeonYoon/guess_gender">Codes</a></li>
                  ];
             default:
                 return (
