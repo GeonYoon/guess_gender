@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project kubernetes-252022
   - gcloud config set compute/zone us-central1-a
-  - glcoud container clusters get-credentials guess  -cluster
+  - glcoud container clusters get-credentials guess-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
   - docker build -t ssy01013/docker-test -f ./frontend/Dockerfile.dev ./frontend
    
