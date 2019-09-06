@@ -9,6 +9,6 @@ docker push ssy01013/guess-backend:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/backend-deployment backend=ssy01013/guess-backend:$SHA
-kubectl set image deployments/frontend-deployment backend=ssy01013/guess-frontend:$SHA
+kubectl set image deployments/frontend-deployment frontend=ssy01013/guess-frontend:$SHA
 
   
