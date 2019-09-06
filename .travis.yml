@@ -1,23 +1,27 @@
 sudo: required
-
-services: 
+services:
   - docker
-  
+env:
+  global: 
+    - SHA=$(git rev-parse HEAD)
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-  # Since production version of Docker does not support test(only build essentials for deloyment), we use development version of Docker to test
-  - docker build -t ssy01013/react-test -f ./client/Dockerfile.dev ./client
-
+  - openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv -in service-account.json.enc -out service-account.json -d
+  - curl http://sdk.cloud.google.com | bash > /dev/null;
+  - source $HOME/google-cloud-sdk/path.bash.inc
+  - gcloud components update kubectl 
+  - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project kubernetes-252022
+  - gcloud config set compute/zone us-central1-a
+  - glcoud container cluster get-credentials guess  -cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+  - docker build -t ssy01013/docker-test -f ./frontend/Dockerfile.dev ./frontend
+   
 script:
-  # npm test is not automatically terminated. So we add a command -- --coverage to kill  
-  - docker run ssy01013/react-test npm test -- --coverage
+  - docker run -e CI=true ssy01013/docker-react npm run test
 
-after_success:
-  - docker build -t ssy01013/guess-frontend ./frontend 
-  - docker build -t ssy01013/guess-nginx ./nginx
-  - docker build -t ssy01013/guess-backend ./backend
-  # Log into the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them to docker hub 
-  - docker push ssy01013/guess-frontend
-  - docker push ssy01013/guess-nginx 
-  - docker push ssy01013/guess-backend
+deploy:
+  provider: script 
+  script: bash ./deploy.sh
+  on:
+    branch: master  

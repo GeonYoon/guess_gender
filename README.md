@@ -66,6 +66,44 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 minikube addons enable ingress
 ```
 
+## Running Travis CLI in a Container
+
+``` script
+docker run -it -v $(pwd):/app ruby:2.3 sh
+cd app
+gem install travis
+travis login
+travis encrypt-file service-account.json -r  GeonYoon/guess_gender
+```  
+
+## configuration on gcloud browser conosle
+
+```script
+glcoud config set project kubernetes-252022
+gcloud config set compute/zone us-central1-a
+gcloud container clusters get-credentials guess-cluster
+```
+
+## 1. Install Helm script
+
+## 2. RBACK
+
+Role Based Access Control (RBAC)
+Who can do what!
+
+## 3. Tiller & Helm init & RBCA enable 
+
+```scrit
+kubectl create serviceaccount --namespace kube-system tiller
+
+kubectl  create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+
+helm init --service-account  tiller --upgrade
+
+helm install stable/nginx-ingress --name my-nginx --set rbac.create=true
+
+```
+
 ## Built With
 
 * [Django](https://www.djangoproject.com) - Python Web framework
