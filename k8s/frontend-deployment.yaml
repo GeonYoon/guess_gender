@@ -13,7 +13,7 @@ spec:
         component: frontend
     spec: 
       containers: 
-        - name: client
+        - name: frontend
           image: ssy01013/guess-frontend
           ports:
             - containerPort: 3000
