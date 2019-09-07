@@ -15,12 +15,13 @@ class Header extends Component {
                  return [
                    <li key='1'><Link to={'/login'}>Login</Link></li>,
                    <li key='2'><Link to={'/register'}>Register</Link></li>,
-                   <li key='3'><a href="https://github.com/GeonYoon/guess_gender">Codes</a></li>
+                   <li key='3'><a href="https://github.com/GeonYoon/guess_gender">Check the code</a></li>
                  ];
             default:
-                return (
-                    <li><Link to={'/'} onClick={this.handleSubmit.bind(this)}>Logout</Link></li>
-                );
+                return [
+                        <li key="1"><Link to={'/'} onClick={this.handleSubmit.bind(this)}>Logout</Link></li>,
+                        <li key="2"><a href="https://github.com/GeonYoon/guess_gender">Check the Code</a></li>
+                    ];
         }
     };
 
