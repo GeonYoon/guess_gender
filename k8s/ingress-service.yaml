@@ -13,7 +13,7 @@ spec:
     - hosts:
         - guess.geonyoon.com
         - www.guess.geonyoon.com
-      secretName: k8s-guess.geonyoon-com
+      secretName: k8s-guess-geonyoon-com
   rules:
     - host: guess.geonyoon.com
       http:

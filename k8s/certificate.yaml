@@ -1,9 +1,9 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: k8s-guess.geonyoon-com-tls
+  name: k8s-guess-geonyoon-com-tls
 spec:
-  secretName: k8s-guess.geonyoon-com
+  secretName: k8s-guess-geonyoon-com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
