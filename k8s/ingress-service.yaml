@@ -5,19 +5,11 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-    certmanager.k8s.io/cluster-issuer: 'letsencrypt-prod'
-    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
     # UPDATE THIS LINE ABOVE
 spec:
-  tls:
-    - hosts:
-        - guess.geonyoon.com
-        - www.guess.geonyoon.com
-      secretName: k8s-guess-geonyoon-com
   rules:
-    - host: guess.geonyoon.com
-      http:
-        paths:    
+    - http:
+        paths:
           - path: /?(.*)
           # UPDATE THIS LINE ABOVE
             backend:
@@ -28,16 +20,48 @@ spec:
             backend:
               serviceName: backend-service
               servicePort: 8000
-    - host: www.guess.geonyoon.com
-      http:
-        paths:    
-          - path: /?(.*)
-          # UPDATE THIS LINE ABOVE
-            backend:
-              serviceName: frontend-service
-              servicePort: 3000
-          - path: /api/?(.*)
-          # UPDATE THIS LINE ABOVE
-            backend:
-              serviceName: backend-service
-              servicePort: 8000
+
+# FOR THE FUTURE PURPOSE
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: ingress-service
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+#     nginx.ingress.kubernetes.io/rewrite-target: /$1
+#     certmanager.k8s.io/cluster-issuer: 'letsencrypt-prod'
+#     nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+#     # UPDATE THIS LINE ABOVE
+# spec:
+#   tls:
+#     - hosts:
+#         - guess.geonyoon.com
+#         - www.guess.geonyoon.com
+#       secretName: k8s-guess-geonyoon-com
+#   rules:
+#     - host: guess.geonyoon.com
+#       http:
+#         paths:    
+#           - path: /?(.*)
+#           # UPDATE THIS LINE ABOVE
+#             backend:
+#               serviceName: frontend-service
+#               servicePort: 3000
+#           - path: /api/?(.*)
+#           # UPDATE THIS LINE ABOVE
+#             backend:
+#               serviceName: backend-service
+#               servicePort: 8000
+#     - host: www.guess.geonyoon.com
+#       http:
+#         paths:    
+#           - path: /?(.*)
+#           # UPDATE THIS LINE ABOVE
+#             backend:
+#               serviceName: frontend-service
+#               servicePort: 3000
+#           - path: /api/?(.*)
+#           # UPDATE THIS LINE ABOVE
+#             backend:
+#               serviceName: backend-service
+#               servicePort: 8000
