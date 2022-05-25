@@ -14,7 +14,7 @@ matplotlib==3.0.2
 mccabe==0.6.1
 nltk==3.4
 numpy==1.15.4
-PyJWT==1.7.0
+PyJWT==2.4.0
 pylint==2.2.2
 pyparsing==2.3.0
 python-dateutil==2.7.5
